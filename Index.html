@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Page with Age Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            section {
+                padding: 10px;
+            }
+        }
+
+        /* Banner Styles */
+        .banner {
+            background-image: url('banner-image.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 4em 0;
+        }
+
+        /* Card Styles */
+        .card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .card-item {
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            background-color: #eee;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Age Check Styles */
+        .age-check {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .age-card {
+            width: 50%;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #37ec13;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="banner">
+        <h1>Welcome to Our Page</h1>
+        <p>Explore our content and services.</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="age-check">
+        <label for="age">Enter Your Age:</label>
+        <input type="number" id="age" name="age">
+        <div id="ageCard" class="age-card" style="display: none;"></div>
+    </div>
+    <section class="card">
+        <div class="card-item">
+            <img src="download.jpeg" alt="Card Image 1">
+            <h2>Thank You</h2>
+            <p>Thank you very much.</p>
+        </div>
+        <div class="card-item">
+            <img src="download.jpeg" alt="Card Image 2">
+            <h2>Thank You</h2>
+            <p>Thank you very much.</p>
+        </div>
+        <div class="card-item">
+            <img src="download.jpeg" alt="Card Image 3">
+            <h2>Thank You</h2>
+            <p>Thank you very much.</p>
+        </div>
+    </section>
+
+    <div class="age-check">
+        <label for="age">Enter Your Age:</label>
+        <input type="number" id="age" name="age">
+        <div id="ageCard" class="age-card" style="display: none;"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Responsive Page</p>
+    </footer>
+
+    <script>
+        document.getElementById("age").addEventListener("change", function() {
+            var age = parseInt(this.value);
+            var ageCard = document.getElementById("ageCard");
+
+            if (age >= 18) {
+                ageCard.innerHTML = "<h2>You are an adult</h2>";
+            } else {
+                ageCard.innerHTML = "<h2>You are a child</h2>";
+            }
+
+            ageCard.style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
